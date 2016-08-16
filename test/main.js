@@ -1,10 +1,6 @@
-# class-gui
-
-##Example
-```js
 import React from "react"
 import ReactDom from "react-dom"
-import ClassGui from "class-gui"
+import ClassGui from "../dist/index"
 import t from "tcomb-form"
 
 class User {
@@ -24,6 +20,5 @@ class User {
 }
 
 ReactDom.render(
-  <ClassGui clazz={User} value={{name:"Bob"}} allowDelete={true|false}/>,
+  <ClassGui clazz={User} value={{name:"Bob"}} allowDelete={true}/>, 
 document.getElementById("app"))
-```
