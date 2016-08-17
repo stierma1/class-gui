@@ -25,12 +25,6 @@ exports.default = _react2.default.createClass({
     }
   },
 
-  onChange: function onChange(evt) {
-    if (this.props.readOnly) {
-      this.forceUpdate();
-    }
-  },
-
   render: function render() {
     var button = null;
     if (!this.props.readOnly) {
@@ -45,7 +39,7 @@ exports.default = _react2.default.createClass({
         ),
         this.props.allowDelete ? _react2.default.createElement(
           "button",
-          { onClick: this.onDelete, className: "btn" },
+          { onClick: this.props.onDelete && this.props.onDelete.bind(this), className: "btn" },
           "Delete"
         ) : null
       );
@@ -53,7 +47,7 @@ exports.default = _react2.default.createClass({
 
     return _react2.default.createElement(
       "form",
-      { onSubmit: this.props.onSubmit || this.onSubmit },
+      { onSubmit: this.props.onSubmit && this.props.onSubmit.bind(this) || this.onSubmit },
       _react2.default.createElement(_tcombForm2.default.form.Form, { ref: "form", value: this.props.value, type: this.props.clazz.getSchema() }),
       button
     );
