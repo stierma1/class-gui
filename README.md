@@ -1,7 +1,9 @@
 # class-gui
 
 ##Example
+
 ```js
+
 import React from "react"
 import ReactDom from "react-dom"
 import ClassGui from "class-gui"
@@ -26,4 +28,5 @@ class User {
 ReactDom.render(
   <ClassGui clazz={User} value={{name:"Bob"}} allowDelete={true|false}/>,
 document.getElementById("app"))
+
 ```
